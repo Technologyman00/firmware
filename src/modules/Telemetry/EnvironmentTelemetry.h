@@ -54,7 +54,7 @@ class EnvironmentTelemetryModule : private concurrency::OSThread, public Protobu
   private:
     bool firstTime = 1;
     meshtastic_MeshPacket *lastMeasurementPacket;
-    uint32_t sendToPhoneIntervalMs = SECONDS_IN_MINUTE * 1000; // Send to phone every minute
+    uint32_t sendToPhoneIntervalMs = 10000; // Send to phone every 10 seconds. Presumably this also attributes to MQTT
     uint32_t lastSentToMesh = 0;
     uint32_t lastSentToPhone = 0;
     uint32_t sensor_read_error_count = 0;
